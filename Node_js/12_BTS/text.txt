@@ -1,0 +1,2 @@
+hello world
+put out this data out of the directory of Node_js
