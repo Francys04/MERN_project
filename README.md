@@ -1,3 +1,1 @@
-# MERN_project
-
-start
+hello alex is therealex is there1
