@@ -1,7 +1,5 @@
 import express from "express";
-
-const app = express();
-
+// const app = express();
 //ugly code
 // app.get("/student", (req, res) => {
 //   res.send("All Students");
@@ -61,5 +59,27 @@ const app = express();
 // });
 
 // Controllers
+// import students from "../06_postaman_app/routess/students";
+
+// const app = express();
+
+// app.use("/student", students);
+// app.listen(8000, () => console.log("Server Running..."));
+
+// Query String Methods => ? &
+const app = express();
+// app.get("/product", (req, res) => {
+//   res.send(`Response OK ${req.query.category}`);
+// app.get("/product", (req, res) => {
+//   const { category, id } = req.query;
+//   res.send(`Product Category: ${category} with id: ${id}`);
+// });
+
+// Sending Jason files
+import products from "./products.js";
+
+app.get("/products", (req, res) => {
+  res.json(products);
+});
 
 app.listen(8000, () => console.log("Server Running..."));
