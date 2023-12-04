@@ -351,24 +351,36 @@
 
 //useEffect ()
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-function App() {
-  const [value, setValue] = useState(0);
+// function App() {
+//   const [value, setValue] = useState(0);
 
-  //1. Render for the first time
-  // 2. Anytime we do (side effect)
-  useEffect(() => {
-    console.log("Hello");
-    document.title = `Increment ${value}`;
-  });
+//   //1. Render for the first time
+//   // 2. Anytime we do (side effect)
+//   useEffect(() => {
+//     console.log("Hello");
+//     document.title = `Increment ${value}`;
+//   });
 
+//   return (
+//     <>
+//       <h1>{value}</h1>
+//       <button onClick={() => setValue(value + 1)}>Click Me</button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+import Counter from "./counter";
+
+const App = () => {
   return (
     <>
-      <h1>{value}</h1>
-      <button onClick={() => setValue(value + 1)}>Click Me</button>
+      <Counter />
     </>
   );
-}
+};
 
 export default App;
