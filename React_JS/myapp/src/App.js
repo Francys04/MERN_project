@@ -154,16 +154,219 @@
 
 // Props/ Properties
 
-import User from "./User";
-// Create new user file and putt code for User
+// import User from "./User";
+// // Create new user file and putt code for User
+// function App() {
+//   return (
+//     <>
+//       <User
+//         img="https://avatars.githubusercontent.com/u/133686327?v=4"
+//         age={18}
+//         hobbies={["Coding", "Sleeping"]}
+//       />
+//     </>
+//   );
+// }
+
+// export default App;
+
+// Condition Rendering
+
+// const ValidPassword = () => <h1>Valid Password</h1>;
+// const InvalidPassword = () => <h1>Invalid Password</h1>;
+
+// const Password = ({ isValid }) => {
+//   if (isValid) {
+//     return <ValidPassword />;
+//   }
+//   return <InvalidPassword />;
+// };
+// function App() {
+//   return (
+//     <>
+//       <Password isValid={false} />
+//     </>
+//   );
+// }
+
+// With && and operator
+
+// const Cart = () => {
+//   const items = ["Wirless Earbuds", "Power Bank", "Hoodies"];
+//   return (
+//     <>
+//       <h1>Cart</h1>
+
+//       {items.length > 0 && <h2>You have {items.length} inside in your cart</h2>}
+
+//       <ul>
+//         <h4>Products</h4>
+//         {items.map((item) => (
+//           <li key={Math.random}>{item}</li>
+//         ))}
+//         <li></li>
+//       </ul>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Cart />
+//     </>
+//   );
+// }
+
+// export default App;
+
+// Styles
+
+// function App() {
+//   const differentStyles = {
+//     color: "teal",
+//     backgroundColor: "crimson",
+//   };
+//   return (
+//     <>
+//       <h1
+//         style={{
+//           color: differentStyles.color,
+//           backgroundColor: differentStyles.backgroundColor,
+
+//         }}
+//       >
+//         Hello Alex
+//       </h1>
+//     </>
+//   );
+// }
+
+// Use sample components with create files for styles componenets
+// import "./index.css";
+
+// function App() {
+//   return (
+//     <>
+//       <h1>Hello Alex</h1>
+//     </>
+//   );
+// }
+
+// export default App;
+
+//Events
+
+// const Button = () => {
+//   const handleClick = (a, b) => {
+//     console.log(a + b);
+//   };
+//   return <button onClick={() => handleClick(2, 2)}>Click</button>;
+// };
+
+// Another example
+// const Copy = () => {
+//   const copyHandler = () => {
+//     alert("copy files");
+//   };
+//   return (
+//     <>
+//       <p onCopy={copyHandler}>Lorem ipsum dolor sit</p>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Copy />
+//     </>
+//   );
+// }
+
+// export default App;
+
+//State
+//Hooks
+// import { useState } from "react";
+
+// const Counter = () => {
+//   const [count, setCount] = useState(0);
+//   const increment = () => {
+//     setCount(count + 1);
+//   };
+//   const decrement = () => {
+//     setCount(count - 1);
+//   };
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={increment}>+</button>
+//       <button onClick={decrement}>-</button>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Counter />
+//     </>
+//   );
+// }
+
+// export default App;
+
+//Update arrays of data
+
+// import { useState } from "react";
+
+// function App() {
+//   const [friends, setFriends] = useState(["Alex", "John"]);
+
+//   const addOne = () => {
+//     setFriends([...friends, "Alex"]);
+//   };
+//   const removeOne = () => {
+//     setFriends(friends.filter((f) => f !== "Alex"));
+//   };
+
+//   const updateOne = () => {
+//     setFriends(friends.map((f) => (f === "Alex " ? "John" : f)));
+//   };
+
+//   return (
+//     <>
+//       {friends.map((f) => (
+//         <li key={Math.random()}>{f}</li>
+//       ))}
+//       <button onClick={addOne}>Add One</button>
+//       <button onClick={removeOne}>Remove One</button>
+//       <button onAbort={updateOne}>Update One</button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+//useEffect ()
+
+import { useEffect, useState } from "react";
+
 function App() {
+  const [value, setValue] = useState(0);
+
+  //1. Render for the first time
+  // 2. Anytime we do (side effect)
+  useEffect(() => {
+    console.log("Hello");
+    document.title = `Increment ${value}`;
+  });
+
   return (
     <>
-      <User
-        img="https://avatars.githubusercontent.com/u/133686327?v=4"
-        age={18}
-        hobbies={["Coding", "Sleeping"]}
-      />
+      <h1>{value}</h1>
+      <button onClick={() => setValue(value + 1)}>Click Me</button>
     </>
   );
 }
