@@ -373,13 +373,39 @@
 
 // export default App;
 
-import Counter from "./counter";
+// import Counter from "./counter";
+
+// const App = () => {
+//   return (
+//     <>
+//       <Counter />
+//     </>
+//   );
+// };
+
+// export default App;
+
+// todo list
+// import Todo from "./todolist.js";
+
+// const App = () => {
+//   return (
+//     <>
+//       <Todo />
+//     </>
+//   );
+// };
+
+// export default App;
+
+// calculator
+import Main from "./Main";
 
 const App = () => {
   return (
-    <>
-      <Counter />
-    </>
+    <div className="container">
+      <Main />
+    </div>
   );
 };
 
